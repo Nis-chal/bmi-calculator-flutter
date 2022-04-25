@@ -5,7 +5,6 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 
-
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
@@ -14,16 +13,63 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text('Body Text'),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Color(0xFF1D1E33),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ReusableCard(
+              colour: Color(0xFF1D1E33),
+            ),
+          ),
+          Expanded(
+              child: Row(
+            children: [
+              Expanded(
+                child: ReusableCard(
+                  colour: Color(0xFF1D1E33),
+                ),
+              ),
+              Expanded(
+                child: ReusableCard(
+                  colour: Color(0xFF1D1E33),
+                ),
+              ),
+            ],
+          ))
+        ],
       ),
-      floatingActionButton: Theme(
-        data: ThemeData(
-          colorScheme: ColorScheme.dark().copyWith(secondary: Colors.purple),
-        ),
-        child: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  final Color colour;
+
+  ReusableCard({required this.colour});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: colour,
+        borderRadius: BorderRadius.circular(
+          (10.0),
         ),
       ),
     );
