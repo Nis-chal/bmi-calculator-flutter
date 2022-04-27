@@ -5,10 +5,10 @@ class CalculatorBrain {
   int height;
   int weight;
 
-  double _bmi = 1;
+  late double _bmi;
 
   String calculateBMI() {
-    double _bmi = weight / pow(height / 100, 2);
+    _bmi = weight / pow(height / 100, 2);
 
     return _bmi.toStringAsFixed(1);
   }
